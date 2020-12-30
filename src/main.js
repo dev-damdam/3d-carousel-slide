@@ -1,8 +1,12 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import CarouselComponent from './components/CarouselComponent.vue'
 
-Vue.config.productionTip = false
+const components = [
+    CarouselComponent
+];
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+Object.keys(components).forEach(name => {
+    Vue.component(components[name].name, components[name]);
+});
+
+export default components;
